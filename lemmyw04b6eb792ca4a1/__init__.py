@@ -276,7 +276,7 @@ async def query(parameters: dict) -> AsyncGenerator[Item, None]:
 
                             post_item_ = Item(
                                 content=Content(post_content),
-                                author=Author(str(post_author_id)),
+                                # author=Author(str(post_author_id)),
                                 created_at=CreatedAt(str(post_date)),
                                 domain=Domain("lemmy.world"),
                                 title=Title(str(post_title)),
@@ -319,7 +319,7 @@ async def query(parameters: dict) -> AsyncGenerator[Item, None]:
                                 author_id = comment["comment"]["creator_id"]
                                 comm_item_ = Item(
                                     content=Content(str(comment_content)),
-                                    author=Author(str(author_id)),
+                                    # author=Author(str(author_id)),
                                     created_at=CreatedAt(str(comment_date)),
                                     domain=Domain("lemmy.world"),
                                     title=Title(post_title),
