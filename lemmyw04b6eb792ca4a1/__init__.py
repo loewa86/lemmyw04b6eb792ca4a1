@@ -292,7 +292,7 @@ async def query(parameters: dict) -> AsyncGenerator[Item, None]:
                                 yielded_items += 1
                                 id_found[post_id] = True
                                 logging.info(
-                                    "[Lemmy.world] Found NEW post: ", post_item_
+                                    f"[Lemmy.world] Found NEW post: {post_item_}"
                                 )
                                 yield post_item_
                         comments = await fetch_comments_for_post(
@@ -338,7 +338,7 @@ async def query(parameters: dict) -> AsyncGenerator[Item, None]:
                                     yielded_items += 1
                                     id_found[comment_id] = True
                                     logging.info(
-                                        "[Lemmy.world] Found NEW Comment: ", comm_item_
+                                        f"[Lemmy.world] Found NEW Comment: {comm_item_}" 
                                     )
                                     yield comm_item_
                         if yielded_items >= maximum_items_to_collect:
