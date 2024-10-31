@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="lemmyw04b6eb792ca4a1",
-    version="0.0.3",
+    version="0.0.4",
     packages=find_packages(),
     install_requires=[
         "exorde_data",
