@@ -188,7 +188,6 @@ def sanitize_text(text):
     """
     # Use the compiled patterns for substitution
     text = escape_character_pattern.sub("", text)
-    text = url_pattern.sub("", text)
     return text
 
 
@@ -264,7 +263,7 @@ async def query(parameters: dict) -> AsyncGenerator[Item, None]:
                         if "body" in post:  # if content exists
                             post_content += ". " + post["body"]
                         if "name" in post:  # if title exists
-                            post_title = ". " + post["name"]
+                            post_title = post["name"]
                             post_content += post_title
                         # clean it from escape characters and html tags without beautifulsoup
                         post_content = fromstring(post_content).text_content()
