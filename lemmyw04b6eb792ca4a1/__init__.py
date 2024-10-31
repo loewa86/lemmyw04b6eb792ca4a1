@@ -305,11 +305,7 @@ async def query(parameters: dict) -> AsyncGenerator[Item, None]:
                                 # comment_content = community + '. ' + post_tile + '. ' + comment_text
 
                                 comment_content = (
-                                    segmented_community_name
-                                    + " . "
-                                    + post_title
-                                    + " . "
-                                    + comment_text
+                                    comment_text
                                 )
                                 comment_content = sanitize_text(comment_content)
 
