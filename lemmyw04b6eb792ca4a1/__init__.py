@@ -79,7 +79,7 @@ async def fetch_new_posts_from_community(community_name):
     - Optional[Any]: The fetched posts as a JSON object, or None if an error occurred.
     """
     try:
-        url = f"https://lemmy.world/api/v3/post/list?community_name={community_name}&sort=New&limit=50"
+        url = f"https://lemmy.world/api/v3/post/list?community_name={community_name}&sort=New&limit=100"
         async with aiohttp.ClientSession() as session:
             async with session.get(
                 url,
@@ -133,8 +133,8 @@ async def fetch_comments_for_post(post_id, max_oldness):
         await session.close()
 
 
-DEFAULT_MIN_POST_LENGTH = 20
-DEFAULT_MAXIMUM_ITEMS = 10
+DEFAULT_MIN_POST_LENGTH = 10
+DEFAULT_MAXIMUM_ITEMS = 30
 DEFAULT_OLDNESS_SECONDS = 3600  # 1 hour
 
 
